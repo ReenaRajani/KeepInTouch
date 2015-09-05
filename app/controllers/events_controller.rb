@@ -74,6 +74,23 @@ class EventsController < ApplicationController
      @employees = Employee.where emp_type: 'Leaver'
   end
 
+  def mail
+      event = Event.find( params[:event_id] )
+      details = JSON.parse params[:details]
+      inviter = Employee.find(params[:employee_id])
+      url = request.env["HTTP_ORIGIN"]
+      details.each do |user|
+
+      emp = Employee.find_by :email_id => details[0]["email"]
+      # binding.pry
+
+      EventMailer.invite_guest( emp, event, inviter, url ).deliver_now
+      # binding.pry
+    end
+
+    render :json => { status: "200 OK" }
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
