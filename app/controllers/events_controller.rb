@@ -69,6 +69,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def invite
+     @event = Event.find( params[:event_id])
+     @employees = Employee.where emp_type: 'Leaver'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event

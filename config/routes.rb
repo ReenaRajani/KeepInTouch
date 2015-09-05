@@ -26,7 +26,17 @@ Rails.application.routes.draw do
   get 'pages/settings'
 
   root :to => 'pages#home'
+   
   resources :employees do 
-    resources :events
+    resources :events do
+      get '/inviteEmployees' => "events#invite"
+      post 'employees/mail', :to => "events#mail"
+      get '/rsvp' => 'guests#rsvp'
+      post '/yes' => 'guests#accept'
+      post '/maybe' => 'guests#maybe'
+      post '/no' => 'guests#decline'
+
+    end
+
   end
 end

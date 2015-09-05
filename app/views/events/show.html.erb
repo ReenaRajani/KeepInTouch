@@ -40,5 +40,8 @@
   <%= @event.invite %>
 </p>
 
+<%= link_to 'InviteEmployees', employee_event_inviteEmployees_path(@event,@employee) %>
 <%= link_to 'Edit', edit_employee_event_path(@event,@employee) %> |
 <%= link_to 'Back', employee_events_path %>
+
+

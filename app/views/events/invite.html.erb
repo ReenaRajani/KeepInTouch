@@ -1,0 +1,21 @@
+<% provide(:title, 'Invite List') %>
+
+<table class="table table-striped table-hover">                         
+  <tr>                          
+    <th>Name</th>
+    <th>Email-id</th>
+    <th>Send Invite</th>
+  <!--   <th>RSVP Status</th> -->
+  </tr>
+
+  <% @employees.each_with_index do |employee ,i| %> 
+  <tr>
+    <td><%= employee.emp_name %></td>  
+    <td><%= employee.emp_email %></td>
+    <td><input type='checkbox' id='chkbox1' name=<%="employee#{i}" %> data-name="<%= employee.emp_name %>" data-email="<%= employee.emp_email %>"></td> 
+  </tr>
+<% end %>                   
+</table>
+<form class="send_invites">
+<input type="submit" class= "send_invite btn btn-primary" value="Send Invites" /> 
+</form>  
