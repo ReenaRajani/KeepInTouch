@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
+
   # GET /employees
   # GET /employees.json
   def index
@@ -71,4 +72,5 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:emp_name, :emp_type, :emp_email)
     end
+
 end

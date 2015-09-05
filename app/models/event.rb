@@ -17,7 +17,7 @@
 #
 
 class Event < ActiveRecord::Base
-  has_one :employee
+  belongs_to :employee
   validates :eventname, :eventdate, :eventstarttime,:eventendtime, :description, :address, presence: true
 
 end

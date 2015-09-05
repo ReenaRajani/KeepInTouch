@@ -5,31 +5,39 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @employee = Employee.find(params[:employee_id])
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+     @employee = Employee.find(params[:employee_id])
+     @event = Event.find( params[:id] )
   end
 
   # GET /events/new
   def new
     @event = Event.new
+     @employee = Employee.find(params[:employee_id])
   end
 
   # GET /events/1/edit
   def edit
+    @event = Event.find( params[:id] )
+    @employee = Employee.find(params[:employee_id])
   end
 
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @employee = Employee.find(params[:employee_id])
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
+        @event.employee_id = params[:employee_id]
+        format.html { redirect_to employee_events_path(params[:employee_id]), notice: 'Event was successfully created.' }
+        format.json { render :show, status: :created, location: employee_events_path(params[:employee_id]) }
       else
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
@@ -56,7 +64,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to employee_events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
