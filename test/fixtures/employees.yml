@@ -2,13 +2,12 @@
 #
 # Table name: employees
 #
-#  id              :integer          not null, primary key
-#  emp_name        :string
-#  emp_type        :string
-#  emp_email       :text
-#  password_digest :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id         :integer          not null, primary key
+#  emp_name   :string
+#  emp_type   :string
+#  emp_email  :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

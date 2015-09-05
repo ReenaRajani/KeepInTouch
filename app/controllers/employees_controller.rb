@@ -69,6 +69,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:emp_name, :emp_type, :emp_email, :password_digest)
+      params.require(:employee).permit(:emp_name, :emp_type, :emp_email)
     end
 end

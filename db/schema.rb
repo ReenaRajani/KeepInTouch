@@ -28,9 +28,8 @@ ActiveRecord::Schema.define(version: 20150905064926) do
     t.string   "emp_name"
     t.string   "emp_type"
     t.text     "emp_email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -41,10 +40,9 @@ ActiveRecord::Schema.define(version: 20150905064926) do
     t.string   "description"
     t.string   "address"
     t.string   "additionalinfo"
-    t.string   "attendanceoption"
     t.string   "invite"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "employee_id"
   end
 

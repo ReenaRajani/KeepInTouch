@@ -17,15 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :emp_type %><br>
-    <%= f.text_field :emp_type %>
+    <%= f.select(:emp_type, options_for_select([
+                ['Manager'], 
+                ['Leaver'],
+                ])
+            )%>
   </div>
   <div class="field">
     <%= f.label :emp_email %><br>
-    <%= f.text_area :emp_email %>
-  </div>
-  <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
+    <%= f.text_field :emp_email %>
   </div>
   <div class="actions">
     <%= f.submit %>

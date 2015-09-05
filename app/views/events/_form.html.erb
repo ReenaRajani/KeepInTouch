@@ -21,19 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :eventstarttime %><br>
-    <%= f.datetime_select :eventstarttime %>
+    <%= f.time_select :eventstarttime %>
   </div>
   <div class="field">
     <%= f.label :eventendtime %><br>
-    <%= f.datetime_select :eventendtime %>
+    <%= f.time_select :eventendtime %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :string %><br>
-    <%= f.text_field :string %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
@@ -42,10 +38,6 @@
   <div class="field">
     <%= f.label :additionalinfo %><br>
     <%= f.text_field :additionalinfo %>
-  </div>
-  <div class="field">
-    <%= f.label :attendanceoption %><br>
-    <%= f.text_field :attendanceoption %>
   </div>
   <div class="field">
     <%= f.label :invite %><br>
