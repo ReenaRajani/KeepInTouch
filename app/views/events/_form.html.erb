@@ -1,0 +1,57 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :eventname %><br>
+    <%= f.text_field :eventname %>
+  </div>
+  <div class="field">
+    <%= f.label :eventdate %><br>
+    <%= f.datetime_select :eventdate %>
+  </div>
+  <div class="field">
+    <%= f.label :eventstarttime %><br>
+    <%= f.datetime_select :eventstarttime %>
+  </div>
+  <div class="field">
+    <%= f.label :eventendtime %><br>
+    <%= f.datetime_select :eventendtime %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :string %><br>
+    <%= f.text_field :string %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :additionalinfo %><br>
+    <%= f.text_field :additionalinfo %>
+  </div>
+  <div class="field">
+    <%= f.label :attendanceoption %><br>
+    <%= f.text_field :attendanceoption %>
+  </div>
+  <div class="field">
+    <%= f.label :invite %><br>
+    <%= f.text_field :invite %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
