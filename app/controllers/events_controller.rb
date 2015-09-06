@@ -5,7 +5,11 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    if (params[:employee_id])
     @employee = Employee.find(params[:employee_id])
+  else
+    @employee = Employee.find(1)
+  end
   end
 
   # GET /events/1
@@ -18,7 +22,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-     @employee = Employee.find(params[:employee_id])
+    @employee = Employee.find(params[:employee_id])
   end
 
   # GET /events/1/edit

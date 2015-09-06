@@ -35,7 +35,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.eventname %></td>
+        <td><%= link_to event.eventname, employee_event_path %></td>
         <td><%= event.eventdate %></td>
         <td><%= event.eventstarttime.strftime(' %H:%M %Z')  %></td>
         <td><%= event.eventendtime.strftime(' %H:%M %Z') %></td>
