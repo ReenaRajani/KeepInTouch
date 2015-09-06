@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   get 'pages/settings'
 
-  root :to => 'pages#home'
+  root :to => 'events#index'
    
   resources :employees do 
     resources :events do
