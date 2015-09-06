@@ -1,11 +1,11 @@
 class EventMailer < ApplicationMailer
   default from: "reena_hrajani@yahoo.co.in"
 
-  def invite_employee(guest, event, current_user, url)
-    @guest = guest
+  def invite_employee(leaver, event, inviter, url)
+    @leaver = leaver
     @event = event
-    @current_user = current_user
+    @current_user = inviter
     @url = url
-    mail(to: @guest.email_id, subject: "You are Invited ")
+    mail(to: @leaver.emp_email, subject: "You are Invited ")
   end
 end

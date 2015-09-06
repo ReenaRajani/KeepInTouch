@@ -75,16 +75,17 @@ class EventsController < ApplicationController
   end
 
   def mail
+      
       event = Event.find( params[:event_id] )
       details = JSON.parse params[:details]
       inviter = Employee.find(params[:employee_id])
       url = request.env["HTTP_ORIGIN"]
-      details.each do |user|
+      details.each_with_index do |user,i|
 
-      emp = Employee.find_by :email_id => details[0]["email"]
-      # binding.pry
+      emp = Employee.find_by :emp_email => details[i]["email"]
+    # binding.pry
 
-      EventMailer.invite_guest( emp, event, inviter, url ).deliver_now
+      EventMailer.invite_employee( emp, event, inviter, url ).deliver_now
       # binding.pry
     end
 

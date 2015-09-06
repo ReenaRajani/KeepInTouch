@@ -13,11 +13,12 @@ $(document).on('ready page:load',function(){
     var details = [];
     $("input[type=checkbox]:checked").each( function (i, input) { 
       var data = {};
+      
       data.name = $(input).data("name");
       data.email = $(input).data("email");
       details.push( data );
     });
-    // console.log( details );
+    console.log( details );
 
     $.ajax({
       url: window.location.pathname + "/mail",
