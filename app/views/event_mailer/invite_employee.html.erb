@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitation</title>
+</head>
+<body>
+
+
+  <p>Hi <%= @leaver.emp_name %>,</p>
+    
+  <p>You are invited to <%= @event.eventname %>.</p>
+
+  <p> at <%= @event.address %> </p>
+
+  <p><em><%= @event.description %></em></p>
+
+  <p><%= @event.eventdate.strftime( "It is on %A, %B %d, %Y, at %I:%M%p " ) %> 
+<%= @event.eventstarttime.strftime( "From , at %I:%M%p " ) %>
+ <%= @event.eventendtime.strftime( "Until %I:%M%p " ) %></p>
+
+  <%= link_to "Click here to RSVP!", @url + employee_event_rsvp_path(@event, @leaver) %>
+    
+  <p>Best,</p>
+
+  <p><%= @current_user.emp_name %></p>
+
+  
+</body>
+</html>

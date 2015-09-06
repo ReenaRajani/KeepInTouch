@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :employees do 
     resources :events do
       get '/inviteEmployees' => "events#invite"
-      post 'employees/mail', :to => "events#mail"
+      post '/inviteEmployees/mail', :to => "events#mail"
       get '/rsvp' => 'guests#rsvp'
       post '/yes' => 'guests#accept'
       post '/maybe' => 'guests#maybe'
