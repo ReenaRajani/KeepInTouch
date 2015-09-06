@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: keepintouch_development
+  host: localhost
+  username: user
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,6 +82,8 @@ test:
 #
 production:
   <<: *default
-  database: keepintouch_production
-  username: keepintouch
-  password: <%= ENV['KEEPINTOUCH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: KeepInTouch
+  username: KeepInTouch
+  password: KeepInTouch
+  host: keepintouch.crx56ondaeuu.us-west-2.rds.amazonaws.com
