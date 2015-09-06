@@ -24,11 +24,11 @@
     <tr>
       <th>Name</th>
       <th>Date</th>
-      <th>Starttime</th>
-      <th>Endtime</th>
+      <th>Start</th>
+      <th>End</th>
       <th>Description</th>
       <th>Address</th>
-      <th>Additionalinfo</th>
+      <th>Additional Information</th>
     </tr>
   </thead>
 
@@ -37,8 +37,8 @@
       <tr>
         <td><%= event.eventname %></td>
         <td><%= event.eventdate %></td>
-        <td><%= event.eventstarttime %></td>
-        <td><%= event.eventendtime %></td>
+        <td><%= event.eventstarttime.strftime(' %H:%M %Z')  %></td>
+        <td><%= event.eventendtime.strftime(' %H:%M %Z') %></td>
         <td><%= event.description %></td>
         <td><%= event.address %></td>
         <td><%= event.additionalinfo %></td>
