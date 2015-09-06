@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     if (params[:employee_id])
     @employee = Employee.find(params[:employee_id])
   else
-    @employee = Employee.find(1)
+    @employee = Employee.all
   end
   end
 

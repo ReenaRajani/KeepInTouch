@@ -136,6 +136,10 @@ header .intro-text .skills {
         transition: padding .3s;
     }
 
+    .navbar-right {
+        margin-right: 25px !important;
+    }
+
     .navbar-fixed-top .navbar-brand {
         font-size: 2em;
         -webkit-transition: all .3s;
