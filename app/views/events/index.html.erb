@@ -36,6 +36,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= link_to event.eventname, "events/#{event.id}"%></td>
+        <td>
         <td><%= event.eventdate %></td>
         <td><%= event.eventstarttime.strftime(' %H:%M %Z')  %></td>
         <td><%= event.eventendtime.strftime(' %H:%M %Z') %></td>

@@ -15,7 +15,11 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-     @employee = Employee.find(params[:employee_id])
+      if (params[:employee_id])
+        @employee = Employee.find(params[:employee_id])
+      else
+        @employee = Employee.find(1)
+      end
      @event = Event.find( params[:id] )
   end
 
